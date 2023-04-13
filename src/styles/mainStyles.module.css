@@ -16,7 +16,7 @@
 }
 .card{
     position: relative;
-    width: 205px;
+    width: 220px;
     height: 45vh;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     top: 10px;
-    left: 160px;
+    left: 170px;
     font-size: 0.8em;
 }
 .btnLeft, .btnRight {
