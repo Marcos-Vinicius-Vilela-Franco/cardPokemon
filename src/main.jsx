@@ -29,13 +29,15 @@ export default function Main() {
     };
 
     const handleChange = (event) => {
-        setSearchTerm(event.target.value);
+        const value = event.target.value
+        setSearchTerm(value.toLowerCase());
     };
 
 
 
 
     const fetchPokemon = async (pokemon) => {
+       
         const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         const data = await APIResponse.json()
         return data;
@@ -114,9 +116,12 @@ export default function Main() {
             </div>
             <div className={styles.pesquisa}>
                 <form onSubmit={handleSubmit}>
-                    <div classname={styles.search_box}>
-                        <button className={styles.btn_search} type="submit"><img style={imgPokeballStyle} src={Pokeball} alt="Pokeball imagem" /> </button>
-                        <input type="text" className={styles.input_search} value={searchTerm} placeholder="Type to Search..." onChange={handleChange} />
+                    <div className={styles.search_box}>
+                        <img style={imgPokeballStyle} src={Pokeball} alt="Pokeball imagem" />
+                        <input className={styles.input_search} type="text" value={searchTerm} placeholder="Procure por um Pokemon..." onChange={handleChange} />
+                        <button className={styles.btn_search} type="submit">
+                            enviar
+                        </button>
 
                     </div>
                 </form>
